@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Official Public Apology & Urgent Proposal 🥺❤️</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Mali:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFF9F5',
+                        pastelPink: '#FFB7C5',
+                        softRose: '#FF85A1',
+                        bubbleGum: '#FF6B8B',
+                        warmYellow: '#FFE494',
+                        softPurple: '#E2C6FF',
+                        mintGreen: '#B5EAD7'
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        handwriting: ['Mali', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #FFF9F5;
+            background-image: radial-gradient(#FF85A1 0.75px, transparent 0.75px), radial-gradient(#FF85A1 0.75px, #FFF9F5 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            overflow-x: hidden;
+        }
+
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        .flip-card-inner {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: float 4s ease-in-out 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 107, 139, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(255, 107, 139, 0.8); }
+        }
+        .glow-effect {
+            animation: pulse-glow 2s infinite;
+        }
+
+        /* Floating background hearts */
+        .heart-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatUp 8s linear infinite;
+            opacity: 0.6;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(105vh) scale(0.5) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.7; }
+            100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-slate-700 min-h-screen relative flex flex-col justify-between">
+
+    <div id="heart-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- MAIN WRAPPER -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-8 md:py-12 flex-grow flex flex-col items-center">
+
+        <!-- Header / Hero Section -->
+        <header class="text-center mb-10 w-full">
+            <div class="inline-block bg-white px-6 py-2 rounded-full border-2 border-softRose shadow-md mb-4 transform -rotate-1 hover:rotate-0 transition-transform">
+                <span class="text-softRose font-semibold tracking-wider text-sm md:text-base flex items-center gap-2">
+                    <i data-lucide="siren" class="w-4 h-4 animate-bounce text-red-500"></i>
+                    URGENT & CRITICAL RELATIONSHIP UPDATE
+                    <i data-lucide="siren" class="w-4 h-4 animate-bounce text-red-500"></i>
+                </span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-bubbleGum mb-3 tracking-tight drop-shadow-sm">
+                Imi Kangen banget sama alynn! 🥺
+            </h1>
+            <p class="text-lg md:text-xl font-handwriting text-slate-600 max-w-2xl mx-auto">
+                "I made a mistake, my brain was temporarily on airplane mode, and life without you is as boring as unsalted broccoli."
+            </p>
+        </header>
+
+        <!-- Love & Forgiveness Barometer -->
+        <section class="w-full bg-white rounded-3xl p-6 md:p-8 border-4 border-pastelPink shadow-xl mb-12 transform hover:-translate-y-1 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-softRose p-2 rounded-2xl text-white">
+                    <i data-lucide="gauge" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">The Forgiveness Barometer</h2>
+                    <p class="text-sm text-slate-500">Slide to adjust how much you're ready to forgive my silliness </p>
+                </div>
+            </div>
+
+            <div class="my-6">
+                <input type="range" id="forgiveSlider" min="0" max="100" value="10" class="w-full h-4 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-bubbleGum">
+                <div class="flex justify-between text-xs md:text-sm font-semibold text-slate-400 mt-2">
+                    <span>0% (With somebody else now/having a new crush)</span>
+                    <span>50% (Free Hugs)</span>
+                    <span>100% (Unlimited Boba & Love)</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Barometer Status Output -->
+            <div id="barometerOutput" class="bg-cream rounded-2xl p-4 border-2 border-dashed border-pastelPink text-center">
+                <span class="text-3xl mb-1 block" id="barometerEmoji">😒</span>
+                <p id="barometerText" class="font-bold text-lg text-bubbleGum">"Now i have a new crush that can be my future bf"</p>
+                <p id="barometerSubtext" class="text-xs text-slate-500 mt-1">Move the slider to the right... I dare you! 😉</p>
+            </div>
+        </section>
+
+        <!-- Why I'm Sorry Section (Flip Cards) -->
+        <section class="w-full mb-12">
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-extrabold text-slate-800 flex items-center justify-center gap-2">
+                    <i data-lucide="brain-circuit" class="text-softRose"></i> Why I'm Saying Sorry
+                </h2>
+                <p class="text-slate-500 text-sm">Click each card to reveal the official confession!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="flip-card h-52 perspective-1000 cursor-pointer">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d duration-500">
+                        <!-- Front -->
+                        <div class="absolute inset-0 bg-white rounded-2xl p-6 border-2 border-softPurple shadow-md flex flex-col items-center justify-center text-center backface-hidden">
+                            <span class="text-4xl mb-2">🥔</span>
+                            <h3 class="font-bold text-lg text-slate-800">Dramatic Potato Mode</h3>
+                            <span class="text-xs text-softRose font-semibold mt-2 underline">Tap to reveal truth ➔</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 bg-softPurple text-slate-800 rounded-2xl p-6 border-2 border-softPurple shadow-md flex flex-col items-center justify-center text-center rotate-y-180 backface-hidden">
+                            <p class="text-sm font-medium">I was being over-dramatic for no good reason. I admit I acted like an uncooked potato!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flip-card h-52 perspective-1000 cursor-pointer">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d duration-500">
+                        <!-- Front -->
+                        <div class="absolute inset-0 bg-white rounded-2xl p-6 border-2 border-warmYellow shadow-md flex flex-col items-center justify-center text-center backface-hidden">
+                            <span class="text-4xl mb-2">✈️</span>
+                            <h3 class="font-bold text-lg text-slate-800">Airplane Brain</h3>
+                            <span class="text-xs text-softRose font-semibold mt-2 underline">Tap to reveal truth ➔</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 bg-warmYellow text-slate-800 rounded-2xl p-6 border-2 border-warmYellow shadow-md flex flex-col items-center justify-center text-center rotate-y-180 backface-hidden">
+                            <p class="text-sm font-medium">My brain signal was disconnected. I said/did something silly without thinking twice!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flip-card h-52 perspective-1000 cursor-pointer">
+                    <div class="flip-card-inner relative w-full h-full transform-style-3d duration-500">
+                        <!-- Front -->
+                        <div class="absolute inset-0 bg-white rounded-2xl p-6 border-2 border-mintGreen shadow-md flex flex-col items-center justify-center text-center backface-hidden">
+                            <span class="text-4xl mb-2">🥺</span>
+                            <h3 class="font-bold text-lg text-slate-800">Withdrawal Symptoms</h3>
+                            <span class="text-xs text-softRose font-semibold mt-2 underline">Tap to reveal truth ➔</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 bg-mintGreen text-slate-800 rounded-2xl p-6 border-2 border-mintGreen shadow-md flex flex-col items-center justify-center text-center rotate-y-180 backface-hidden">
+                            <p class="text-sm font-medium">I miss your nagging, your cute laugh, and even the way you judge my silly jokes!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meme-Style Stats / Compatibility Card -->
+        <section class="w-full bg-white rounded-3xl p-6 md:p-8 border-4 border-warmYellow shadow-xl mb-12">
+            <div class="text-center mb-6">
+                <span class="bg-warmYellow px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800">Unscientific Research Data</span>
+                <h2 class="text-3xl font-extrabold text-slate-800 mt-2">Why We Belong Together</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-cream p-4 rounded-2xl border border-pastelPink">
+                    <div class="text-3xl font-black text-bubbleGum mb-1">99.9%</div>
+                    <div class="text-xs font-semibold text-slate-600">Vibe Compatibility</div>
+                </div>
+                <div class="bg-cream p-4 rounded-2xl border border-pastelPink">
+                    <div class="text-3xl font-black text-bubbleGum mb-1">100%</div>
+                    <div class="text-xs font-semibold text-slate-600">Bad Jokes Tolerance</div>
+                </div>
+                <div class="bg-cream p-4 rounded-2xl border border-pastelPink">
+                    <div class="text-3xl font-black text-bubbleGum mb-1">∞</div>
+                    <div class="text-xs font-semibold text-slate-600">Cuddle Capacity</div>
+                </div>
+                <div class="bg-cream p-4 rounded-2xl border border-pastelPink">
+                    <div class="text-3xl font-black text-bubbleGum mb-1">0%</div>
+                    <div class="text-xs font-semibold text-slate-600">Chance I'll stop loving you</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contract / Promises Section -->
+        <section class="w-full bg-gradient-to-br from-white to-pink-50 rounded-3xl p-6 md:p-8 border-4 border-softPurple shadow-xl mb-12 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-softPurple">
+                <i data-lucide="file-signature" class="w-64 h-64"></i>
+            </div>
+            
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-4 flex items-center gap-2">
+                <i data-lucide="scroll" class="text-softPurple"></i> The Contract of Redemption 📜
+            </h2>
+            <p class="text-sm text-slate-500 mb-6">If you give me one more chance, I solemnly swear to uphold the following strict rules:</p>
+
+            <ul class="space-y-3 font-medium text-slate-700 text-sm md:text-base">
+                <li class="flex items-center gap-3 bg-white p-3 rounded-xl border border-purple-100 shadow-sm">
+                    <span class="text-xl">🧋</span>
+                    <span>I promise to buy you boba/food whenever you are feeling remotely grumpy.</span>
+                </li>
+                <li class="flex items-center gap-3 bg-white p-3 rounded-xl border border-purple-100 shadow-sm">
+                    <span class="text-xl">🏳️</span>
+                    <span>I promise to willingly lose at least 80% of our stupid arguments.</span>
+                </li>
+                <li class="flex items-center gap-3 bg-white p-3 rounded-xl border border-purple-100 shadow-sm">
+                    <span class="text-xl">😘</span>
+                    <span>I promise a daily quota of 100 forehead kisses and random backhugs.</span>
+                </li>
+                <li class="flex items-center gap-3 bg-white p-3 rounded-xl border border-purple-100 shadow-sm">
+                    <span class="text-xl">👂</span>
+                    <span>I promise to actually listen attentively without spacing out!</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- The Decision Zone -->
+        <section id="decision-zone" class="w-full text-center my-8 p-8 bg-white rounded-3xl border-4 border-bubbleGum shadow-2xl relative min-h-[280px] flex flex-col justify-center items-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">So... Will You Take Me Back? 🥹</h2>
+            <p class="text-slate-500 mb-8 font-handwriting text-lg">Choose carefully... (Hint: One button is significantly easier to click! 😉)</p>
+
+            <div class="flex flex-col md:flex-row gap-6 items-center justify-center w-full max-w-md relative min-h-[80px]" id="buttonContainer">
+                <!-- YES BUTTON -->
+                <button id="yesBtn" onclick="handleYesClick()" class="bg-gradient-to-r from-bubbleGum to-softRose text-white font-black text-xl md:text-2xl px-10 py-4 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-transform duration-200 glow-effect flex items-center gap-2 z-20">
+                    <i data-lucide="heart-handshake" class="w-7 h-7"></i> YES! OF COURSE! ❤️
+                </button>
+
+                <!-- NO BUTTON (Slippery/Evasive) -->
+                <button id="noBtn" class="bg-slate-200 text-slate-600 font-bold text-lg px-8 py-4 rounded-full shadow transition-all duration-150 z-10 flex items-center gap-2">
+                    <i data-lucide="x-circle" class="w-5 h-5"></i> Nope, keep trying 😜
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-slate-400 text-xs font-medium border-t border-slate-200/50 bg-white/50 backdrop-blur-sm relative z-10">
+        Made with 💖, 99% desperation, and 100% genuine love for you.
+    </footer>
+
+    <!-- CELEBRATION MODAL -->
+    <div id="successModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full text-center border-4 border-bubbleGum shadow-2xl transform scale-90 transition-transform duration-300" id="modalCard">
+            <div class="text-6xl mb-4 animate-bounce">🎉💖🥳</div>
+            <h2 class="text-3xl font-extrabold text-bubbleGum mb-2">BEST DECISION EVER!</h2>
+            <p class="text-slate-600 mb-6 font-handwriting text-lg">
+                I knew you loved me! Thank you for giving me another chance. I promise I won't disappoint you! 🥰
+            </p>
+
+            <div class="space-y-3">
+                <a id="claimHugBtn" href="https://wa.me/?text=Okay%20fine,%20I%20forgive%20you!%20Now%20come%20give%20me%20a%20hug%20and%20buy%20me%20food!%20❤️" target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-2xl shadow-md flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Send "I Forgive You" Text!
+                </a>
+                <button onclick="closeModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-6 rounded-2xl transition-colors">
+                    Close & Kiss Me! 😘
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // 1. Floating Hearts Background Generator
+        function createHearts() {
+            const container = document.getElementById('heart-container');
+            const heartEmojis = ['💖', '💕', '🌸', '✨', '🥺', '💗'];
+            
+            for(let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+
+        // 2. Forgiveness Slider Logic
+        const slider = document.getElementById('forgiveSlider');
+        const emoji = document.getElementById('barometerEmoji');
+        const text = document.getElementById('barometerText');
+        const subtext = document.getElementById('barometerSubtext');
+
+        const states = [
+            { min: 0, max: 20, emoji: '😒', text: '"Now i have a new crush that can be my future bf"', subtext: 'Move the slider to the right... I dare you! 😉' },
+            { min: 21, max: 50, emoji: '🤨', text: '"Hmm... I\'m listening, but I still need food."', subtext: 'Keep sliding, we are getting somewhere!' },
+            { min: 51, max: 80, emoji: '😌', text: '"Okay fine, you are kind of cute when you apologize."', subtext: 'Almost there! Just a little bit more love!' },
+            { min: 81, max: 99, emoji: '🥰', text: '"Aww... okay I miss you so much too!"', subtext: 'Just hit 100% already!' },
+            { min: 100, max: 100, emoji: '💖', text: '"FORGIVEN! Come here and hug me right now!"', subtext: 'Yay! Now go click the YES button below! 🎉' }
+        ];
+
+        slider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            const currentState = states.find(s => val >= s.min && val <= s.max);
+            if (currentState) {
+                emoji.innerText = currentState.emoji;
+                text.innerText = currentState.text;
+                subtext.innerText = currentState.subtext;
+            }
+        });
+
+        // 3. Evasive "NO" Button Mechanic
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        let noClickCount = 0;
+
+        const evasiveMessages = [
+            "Are you sure? 🤔",
+            "Think again! 🥺",
+            "Nice try! 😜",
+            "Error 404: 'No' not available!",
+            "Stop playing hard to get! 😂",
+            "You know you want to say YES!",
+            "Button malfunctioned! 🚨"
+        ];
+
+        function moveNoButton() {
+            noClickCount++;
+            
+            // Grow the YES button on every attempt
+            const currentScale = 1 + (noClickCount * 0.15);
+            yesBtn.style.transform = `scale(${currentScale})`;
+
+            // Teleport or dodge
+            const container = document.getElementById('decision-zone');
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            // Calculate max X and Y relative to the container
+            const maxX = containerRect.width - btnRect.width - 40;
+            const maxY = containerRect.height - btnRect.height - 40;
+
+            const randomX = Math.max(20, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(20, Math.floor(Math.random() * maxY));
+
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+
+            // Update text randomly
+            const msgIndex = Math.min(noClickCount, evasiveMessages.length - 1);
+            noBtn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4"></i> ${evasiveMessages[msgIndex]}`;
+            lucide.createIcons();
+
+            // If clicked too many times, transform NO into YES
+            if(noClickCount >= 7) {
+                noBtn.className = yesBtn.className;
+                noBtn.innerHTML = "OK FINE, YES! ❤️";
+                noBtn.onclick = handleYesClick;
+            }
+        }
+
+        // Trigger evasion on hover or touch
+        noBtn.addEventListener('mouseover', moveNoButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // 4. Celebration Logic (YES Button Click)
+        function handleYesClick() {
+            // Trigger Confetti
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+
+            // Extra heart confetti burst
+            setTimeout(() => {
+                confetti({
+                    particleCount: 80,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 }
+                });
+                confetti({
+                    particleCount: 80,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 }
+                });
+            }, 250);
+
+            // Show Modal
+            const modal = document.getElementById('successModal');
+            const modalCard = document.getElementById('modalCard');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalCard.classList.remove('scale-90');
+            modalCard.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            const modalCard = document.getElementById('modalCard');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-90');
+        }
+
+        // 5. Flip Card Support for Mobile Touch
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+</body>
+</html>
